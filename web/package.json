@@ -1,0 +1,13 @@
+{
+  "name": "imagen-a-3d",
+  "version": "1.0.0",
+  "description": "Página web que convierte una imagen en un modelo 3D descargable (para Unity u otros).",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}

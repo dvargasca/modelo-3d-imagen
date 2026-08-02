@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imagen → Modelo 3D</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- Visor 3D (renderiza GLB/glTF en el navegador). -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◈</span>
+      <span>Imagen → Modelo 3D</span>
+    </div>
+    <div class="provider-pick">
+      <label for="provider">Motor</label>
+      <select id="provider"></select>
+      <span id="keyBadge" class="badge"></span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Paso 1: subir imagen -->
+    <section class="panel">
+      <h2><span class="step">1</span> Sube tu imagen</h2>
+      <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Subir imagen">
+        <input id="fileInput" type="file" accept="image/*" hidden />
+        <div id="dropEmpty" class="drop-empty">
+          <div class="drop-icon">⬆</div>
+          <p><strong>Arrastra una foto</strong> o haz clic para elegir</p>
+          <p class="hint">JPG, PNG o WEBP · persona de frente y cuerpo completo funciona mejor</p>
+        </div>
+        <img id="preview" class="preview" alt="Vista previa" hidden />
+      </div>
+      <button id="generateBtn" class="btn primary" disabled>Generar modelo 3D</button>
+    </section>
+
+    <!-- Paso 2: resultado -->
+    <section class="panel">
+      <h2><span class="step">2</span> Resultado</h2>
+
+      <div id="idle" class="placeholder">
+        <p>El modelo 3D aparecerá aquí.</p>
+      </div>
+
+      <div id="progress" class="progress-box" hidden>
+        <div class="spinner"></div>
+        <p id="progressLabel">Generando…</p>
+        <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+        <p class="hint">Puede tardar de unos segundos a varios minutos según el motor.</p>
+      </div>
+
+      <div id="result" hidden>
+        <model-viewer
+          id="viewer"
+          camera-controls
+          touch-action="pan-y"
+          shadow-intensity="1"
+          exposure="1"
+          ar
+          alt="Modelo 3D generado"></model-viewer>
+        <div class="downloads">
+          <span>Descargar:</span>
+          <div id="downloadBtns" class="download-btns"></div>
+        </div>
+        <p class="hint">Descarga el <strong>GLB</strong> y arrástralo a la carpeta <code>Assets</code> de tu proyecto Unity.</p>
+      </div>
+
+      <div id="errorBox" class="error-box" hidden></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Sin API key funciona en modo <strong>Demo</strong>. Para modelos reales elige Meshy o Tripo y añade tu llave.</span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
