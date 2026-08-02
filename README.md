@@ -25,12 +25,29 @@ Abre **http://localhost:3000**, sube una imagen, pulsa **Generar** y descarga el
 
 - **Modo demo** (por defecto, sin configurar nada): prueba toda la interfaz con un
   modelo de ejemplo.
-- **Modelos reales**: añade una API key de **Meshy** o **Tripo3D** en `web/.env`
-  (ver **[web/README.md](web/README.md)** para el paso a paso).
+- **Gratis y local (sin API de pago)**: el motor **TripoSR** genera el modelo en
+  tu propia máquina, offline y sin ninguna key. Ideal si no quieres depender de
+  ningún servicio externo. Guía: **[web/local-generator/README.md](web/local-generator/README.md)**.
+- **En la nube**: añade una API key de **Meshy** o **Tripo3D** en `web/.env`
+  (plan gratis con créditos; ver **[web/README.md](web/README.md)**).
 
 Después descargas el **GLB** y lo arrastras a la carpeta `Assets/` de tu proyecto Unity.
 
 > 📄 Guía completa de la web, motores y cómo añadir otros: **[web/README.md](web/README.md)**
+
+---
+
+## 🚀 Publicarla en internet (URL pública)
+
+¿Quieres una **URL que puedas abrir desde cualquier lado** (no solo tu PC)?
+Necesitas un hosting que ejecute **Node** — **GitHub Pages no sirve** porque solo
+aloja archivos estáticos y esta app necesita su servidor (`node server.js`).
+
+La forma gratuita más sencilla es **Render** (el repo ya incluye `render.yaml` listo):
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/dvargasca/modelo-3d-imagen)
+
+> 👉 Guía paso a paso (Render, Glitch y alternativas): **[docs/deploy.md](docs/deploy.md)**
 
 ---
 

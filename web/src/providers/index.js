@@ -17,10 +17,11 @@
  */
 
 const mock = require('./mock');
+const triposr = require('./triposr');
 const meshy = require('./meshy');
 const tripo = require('./tripo');
 
-const PROVIDERS = { mock, meshy, tripo };
+const PROVIDERS = { mock, triposr, meshy, tripo };
 
 function getProvider(name) {
   const p = PROVIDERS[name];

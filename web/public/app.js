@@ -36,6 +36,7 @@ async function init() {
       opt.textContent = p.label + (p.requiresKey && !p.keyConfigured ? ' (sin key)' : '');
       opt.dataset.keyConfigured = p.keyConfigured;
       opt.dataset.requiresKey = p.requiresKey;
+      opt.dataset.kind = p.kind || (p.requiresKey ? 'cloud' : 'demo');
       els.provider.appendChild(opt);
     }
     els.provider.value = cfg.defaultProvider;
@@ -53,7 +54,7 @@ function updateKeyBadge() {
   const requiresKey = opt.dataset.requiresKey === 'true';
   const keyConfigured = opt.dataset.keyConfigured === 'true';
   if (!requiresKey) {
-    els.keyBadge.textContent = 'demo';
+    els.keyBadge.textContent = opt.dataset.kind === 'local' ? 'local · gratis' : 'demo';
     els.keyBadge.className = 'badge';
   } else if (keyConfigured) {
     els.keyBadge.textContent = 'API key ✓';

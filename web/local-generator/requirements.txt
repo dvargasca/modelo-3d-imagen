@@ -1,0 +1,27 @@
+# Dependencias del servicio local de TripoSR (server.py de esta carpeta).
+#
+# RECOMENDADO: instala directamente el requirements.txt de TripoSR (más completo
+# y siempre al día):
+#     pip install -r /ruta/a/TripoSR/requirements.txt
+#
+# Este archivo es una versión MÍNIMA (sólo lo que server.py usa) por si la
+# prefieres. En ambos casos, instala PyTorch por separado según tu equipo:
+#     https://pytorch.org/get-started/locally/     (elige CPU o CUDA)
+
+# --- PyTorch: instálalo TÚ según CPU/GPU (se deja como recordatorio) ---
+# torch
+# torchvision
+
+# --- Núcleo de TripoSR ---
+omegaconf==2.3.0
+Pillow==10.1.0
+einops==0.7.0
+transformers==4.35.0
+trimesh==4.0.5
+numpy
+huggingface-hub
+git+https://github.com/tatsy/torchmcubes.git
+
+# --- Quitar el fondo (opcional, pero mejora MUCHO el resultado) ---
+rembg
+onnxruntime

@@ -1,0 +1,28 @@
+# Blueprint de Render para desplegar la app web "Imagen -> Modelo 3D".
+#
+# Cómo usarlo (resumen):
+#   1. Entra en https://render.com e inicia sesión con GitHub.
+#   2. New +  ->  Blueprint  ->  conecta este repositorio y elige la rama.
+#   3. Render lee este archivo y crea el servicio automáticamente.
+#
+# Guía paso a paso: ../docs/deploy.md
+services:
+  - type: web
+    name: imagen-a-3d
+    runtime: node
+    plan: free               # plan gratuito (se "duerme" tras 15 min sin uso)
+    rootDir: web             # el servidor vive dentro de la carpeta web/
+    buildCommand: npm install # no hay dependencias, es prácticamente instantáneo
+    startCommand: npm start   # equivale a: node server.js
+    autoDeploy: true          # vuelve a desplegar solo al hacer push
+    envVars:
+      # Proveedor por defecto. "mock" = demo sin API key.
+      # Cámbialo a "meshy" o "tripo" en el panel de Render cuando añadas tu llave.
+      - key: PROVIDER
+        value: mock
+      # API keys reales (opcionales). Render te pedirá el valor al desplegar;
+      # déjalas vacías si solo quieres probar la demo.
+      - key: MESHY_API_KEY
+        sync: false
+      - key: TRIPO_API_KEY
+        sync: false

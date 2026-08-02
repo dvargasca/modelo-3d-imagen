@@ -18,6 +18,7 @@ module.exports = {
   label: 'Meshy AI',
   requiresKey: true,
   envKey: 'MESHY_API_KEY',
+  kind: 'cloud',
 
   async start({ imageDataUri, options, apiKey }) {
     const res = await fetch(BASE, {
