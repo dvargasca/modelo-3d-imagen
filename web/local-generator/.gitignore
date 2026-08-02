@@ -1,0 +1,11 @@
+# Modelos generados
+outputs/
+
+# Entornos y cachés de Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Si clonas TripoSR aquí dentro, no lo subas al repo
+TripoSR/

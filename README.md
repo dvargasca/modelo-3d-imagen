@@ -25,8 +25,11 @@ Abre **http://localhost:3000**, sube una imagen, pulsa **Generar** y descarga el
 
 - **Modo demo** (por defecto, sin configurar nada): prueba toda la interfaz con un
   modelo de ejemplo.
-- **Modelos reales**: añade una API key de **Meshy** o **Tripo3D** en `web/.env`
-  (ver **[web/README.md](web/README.md)** para el paso a paso).
+- **Gratis y local (sin API de pago)**: el motor **TripoSR** genera el modelo en
+  tu propia máquina, offline y sin ninguna key. Ideal si no quieres depender de
+  ningún servicio externo. Guía: **[web/local-generator/README.md](web/local-generator/README.md)**.
+- **En la nube**: añade una API key de **Meshy** o **Tripo3D** en `web/.env`
+  (plan gratis con créditos; ver **[web/README.md](web/README.md)**).
 
 Después descargas el **GLB** y lo arrastras a la carpeta `Assets/` de tu proyecto Unity.
 

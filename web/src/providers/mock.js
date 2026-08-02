@@ -20,6 +20,7 @@ module.exports = {
   label: 'Demo (sin API key)',
   requiresKey: false,
   envKey: null,
+  kind: 'demo',
 
   async start() {
     // Codifica el instante de inicio en el id para calcular el progreso luego.

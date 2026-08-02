@@ -78,6 +78,7 @@ function buildConfig() {
       name: p.name,
       label: p.label || p.name,
       requiresKey: p.requiresKey,
+      kind: p.kind || (p.requiresKey ? 'cloud' : 'demo'),
       keyConfigured: !p.requiresKey || Boolean(process.env[p.envKey]),
     })),
   };

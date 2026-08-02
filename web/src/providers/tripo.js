@@ -23,6 +23,7 @@ module.exports = {
   label: 'Tripo3D',
   requiresKey: true,
   envKey: 'TRIPO_API_KEY',
+  kind: 'cloud',
 
   async start({ imageBuffer, mime, filename, apiKey }) {
     // 1) Subir la imagen (multipart). Node 18+ trae FormData/Blob globales.
