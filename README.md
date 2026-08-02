@@ -34,6 +34,20 @@ Después descargas el **GLB** y lo arrastras a la carpeta `Assets/` de tu proyec
 
 ---
 
+## 🚀 Publicarla en internet (URL pública)
+
+¿Quieres una **URL que puedas abrir desde cualquier lado** (no solo tu PC)?
+Necesitas un hosting que ejecute **Node** — **GitHub Pages no sirve** porque solo
+aloja archivos estáticos y esta app necesita su servidor (`node server.js`).
+
+La forma gratuita más sencilla es **Render** (el repo ya incluye `render.yaml` listo):
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/dvargasca/modelo-3d-imagen)
+
+> 👉 Guía paso a paso (Render, Glitch y alternativas): **[docs/deploy.md](docs/deploy.md)**
+
+---
+
 ## 🎮 Parte opcional de Unity
 
 Si además quieres montar la escena VR con pasajeros configurables (sentarse /

@@ -39,6 +39,15 @@ modelo de ejemplo, sin necesidad de API key.
 También puedes cambiar de motor en la propia página con el desplegable **Motor**
 (el que no tenga key aparece marcado como "sin key").
 
+## Publicarla en internet (URL pública)
+
+Para que otras personas la abran desde una URL (no solo en tu `localhost`), hay que
+desplegarla en un hosting que ejecute **Node**. **GitHub Pages NO sirve**: solo
+aloja archivos estáticos y esta app necesita su servidor. La forma gratuita más
+simple es **Render** (el repo trae un `render.yaml` listo).
+
+> 👉 Guía paso a paso: **[../docs/deploy.md](../docs/deploy.md)**
+
 ## Cómo se usa el resultado en Unity
 
 1. Descarga el **GLB**.
